@@ -32,9 +32,7 @@ export const userRegister = (reqObj) => async (dispatch) => {
     const response = await axios.post('/api/user/register',
       reqObj
     );
-
     message.success("Registration successfull");
-
     setTimeout(() => {
       window.location.href = "/login";
     }, 500);

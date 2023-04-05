@@ -10,7 +10,6 @@ import moment from 'moment'
 const Home = () => {
 
   const { RangePicker } = DatePicker
-
   const { car } = useSelector(state => state.carReducer)
   const dispatch = useDispatch()
   const [totalcars, setTotalcars] = useState([])
@@ -28,7 +27,6 @@ const Home = () => {
     for (var cars of car) {
         if (cars.bookedTimeSlots.length ===0) {
         temp.push(cars)
-        console.log(cars, 'is 0 ');
       }     
       else {       
         if (selectedFrom.isBetween(cars.from, cars.to) || selectedTo.isBetween(cars.from, cars.to) || moment(cars.from, cars.to).isBetween(selectedFrom, selectedTo) || moment(cars.to).isBetween(selectedFrom, selectedTo)) {
@@ -38,7 +36,6 @@ const Home = () => {
     }
       setTotalcars(temp)
   }
-  console.log(totalcars, 'total cars');
 
     return (
       <>

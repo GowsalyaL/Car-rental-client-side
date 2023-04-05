@@ -14,9 +14,6 @@ const Bookings = () => {
         dispatch(getAllBookings())
     }, [])
 
-
-
-
     return (
         <DefaultLayout>
             <h3 className='mt-2'>My Bookings</h3>

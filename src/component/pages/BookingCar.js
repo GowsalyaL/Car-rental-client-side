@@ -36,14 +36,11 @@ useEffect(() => {
 useEffect(()=>{
   setTotalAmount((totalHours * cars.rentPerHour))
   if(driver){
-    console.log(totalAmount)
     setTotalAmount( totalAmount + (30* totalHours))
   }
 },[driver,totalHours])
 
 const selectTimeSlot = (values) =>{
-  console.log(moment(values[0]).format("MM DD YYYY HH:mm"));
-  console.log(moment(values[1]).format("MM DD YYYY HH:mm"))
   setFrom(moment(values[0]).format("MM DD YYYY HH:mm"))
   setTo(moment(values[1]).format("MM DD YYYY HH:mm"))
   setTotalHours(values[1].diff(values[0], 'hours'))
